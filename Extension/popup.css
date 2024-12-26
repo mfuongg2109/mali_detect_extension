@@ -1,0 +1,140 @@
+/* Global styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 250px;
+  min-height: 350px;
+}
+
+/* Gradient background animation */
+.gradient-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    #f5a300,
+    #ffc857,
+    #ffdc95,
+    #a2bdcd,
+    #769fb6
+  );
+  background-size: 300% 300%;
+  animation: gradientAnimation 10s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Container for the content */
+.container {
+  text-align: center;
+  z-index: 2; /* Ensure content is on top of the gradient background */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px; /* Add consistent gap between all elements */
+}
+
+/* Heading and sub-heading animations */
+.heading {
+  font-size: 34px;
+  text-align: center;
+  margin-top: 20%;
+  opacity: 0;
+  transform: translateY(-40px);
+  animation: slideIn 1.5s ease 0.5s forwards, fadeIn 1s ease 1s forwards, colorChange 3s infinite;
+  background: linear-gradient(90deg, #325b74 50%, #325b74 50%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.sub-heading {
+  font-size: 24px;
+  color: #8a6549;
+  text-align: center;
+  margin-top: 10px;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: slideIn 1s ease 1s forwards, fadeIn 1s ease 1.5s forwards;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes colorChange {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Status message styles */
+.status {
+  margin-top: 5px; /* Add 5px gap between the check button and status box */
+  padding: 10px;
+  height: 40px;
+  font-size: 16px;
+  width: 80%; /* Keeps the width consistent with the input field */
+  margin: auto auto; /* Centers the div horizontally */
+  border-radius: 5px;
+  text-align: center; /* Centers the text inside the div */
+}
+
+.safe {
+  background-color: #4caf50;
+  color: white;
+}
+
+.malicious {
+  background-color: #f44336;
+  color: white;
+}
+
+.hidden {
+  display: none;
+}
+
+.button-container {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
