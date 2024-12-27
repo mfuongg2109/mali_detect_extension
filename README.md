@@ -17,5 +17,5 @@ từ `URL` và so sánh nó với phần `Domain` trong white list.
 ### 5. Thêm bộ nhớ cache cho extension
 - Ở trên sau khi tách được phần `Domain` rồi thì lưu `Domain` vào white list. Lúc này
 white list đóng vai trò như 1 bộ nhớ cache được lưu tại máy của người dùng.
-- Mỗi lần người
-dùng tắt Browser đi và mở lại thì cái white list vẫn lưu các `Domain` mà người dùng đồng ý `Process`.
+- Mỗi lần người dùng tắt Browser đi và mở lại thì cái white list vẫn lưu các `Domain` mà người dùng đồng ý `Process`.
+- Sử dụng `chrome.storage.local`.
