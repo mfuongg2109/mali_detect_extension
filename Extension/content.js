@@ -1,3 +1,5 @@
+const logoPath = chrome.runtime.getURL("logo.png");
+
 console.log("Content script running on:", window.location.href);
 
 chrome.runtime.sendMessage(
@@ -8,7 +10,7 @@ chrome.runtime.sendMessage(
             return;
         }
 
-        if (response?.isMalicious) {
+        if (response?.is_malicious) {
             chrome.runtime.sendMessage(
                 { action: "isWhitelisted", url: window.location.href },
                 (isWhitelisted) => {
@@ -66,7 +68,7 @@ chrome.runtime.sendMessage(
                                 color: white;
                             }
                         </style>
-                        <img src="/logo.png" alt="Logo" class="logo">
+                        <img src="${logoPath}" alt="Logo" class="logo">
                         <div class="message">
                             The page you are trying to access is flagged as malicious by USTH URL Checker service. 
                             Proceeding to access the website might install dangerous programs on your computer 
