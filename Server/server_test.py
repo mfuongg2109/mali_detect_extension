@@ -13,9 +13,11 @@ urls = ['https://mail.google.com/',
 def check_url():
     data = request.get_json()
     url_inp = data.get("url", "")
-    is_malicious = False
     if url_inp in urls:
         is_malicious = True
+    else: is_malicious = False
+
+    print(f"URL: {url_inp} - Malicious: {is_malicious}")
 
     return jsonify({
         "url": url_inp,
