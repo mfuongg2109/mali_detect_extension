@@ -1,6 +1,6 @@
+console.log("Content script running on:", window.location.href);
 const logoPath = chrome.runtime.getURL("logo.png");
 
-console.log("Content script running on:", window.location.href);
 
 chrome.runtime.sendMessage(
     { action: "checkUrl", url: window.location.href },
@@ -10,7 +10,7 @@ chrome.runtime.sendMessage(
             return;
         }
 
-        if (response?.is_malicious) {
+        if (response?.isMalicious) {
             chrome.runtime.sendMessage(
                 { action: "isWhitelisted", url: window.location.href },
                 (isWhitelisted) => {

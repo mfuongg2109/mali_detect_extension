@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const messageBox = document.getElementById("messageBox");
 
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-        const url = tabs[0].url; // Use the full URL instead of the hostname
+        const url = new URL(tabs[0].url).hostname;
 
         fetch("http://192.168.1.53:5000/check-url", {
             method: "POST",

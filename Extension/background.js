@@ -7,7 +7,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         const url = message.url;
 
         // Use your logic to determine if the URL is malicious
-        fetch("http://192.168.1.27:5000/check-url", {
+        fetch("http://192.168.1.53:5000/check-url", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
