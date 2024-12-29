@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         const url = tabs[0].url; // Use the full URL instead of the hostname
 
-        fetch("http://192.168.1.53:5000/check-url", {
+        fetch("http://192.168.1.25:5000/check-url", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
