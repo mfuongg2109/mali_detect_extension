@@ -7,6 +7,7 @@ CORS(app)
 urls = ['https://mail.google.com/',
         'https://www.youtube.com/',
         'https://web.facebook.com/',
+        "https://www.youtube.com/feed/you",
         'https://www.messenger.com/']
 
 @app.route("/check-url", methods=["POST"])
